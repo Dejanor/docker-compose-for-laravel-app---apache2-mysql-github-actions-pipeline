@@ -1,0 +1,46 @@
+version: '2'
+services:
+  
+  #PHP Service
+  laravel-app:
+    build: .
+    container_name: laravel-app
+    restart: unless-stopped
+    volumes:
+      - apache_logs:/var/log/apache2
+    ports:
+      - "8080:80"
+    networks:
+      - laravel-network
+    command: php artisan migrate --seed
+    depends_on:
+      - db
+
+  #MySQL Service
+  db:
+    build: ./mysql/.
+    container_name: db
+    restart: unless-stopped
+    volumes:
+      - dbdata:/var/lib/mysql/
+      - dbcnf:/etc/my.cnf
+    networks:
+      - laravel-network
+
+#Volumes
+volumes:
+  dbdata:
+    driver: local
+  dbcnf:
+    driver: local
+  apache_logs:
+    driver: local
+
+#Network
+networks:
+  laravel-network:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.21.0.0/24
+        gateway: 172.21.0.1
