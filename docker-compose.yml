@@ -18,9 +18,13 @@ services:
 
   #MySQL Service
   db:
-    build: ./mysql/.
+    image: mysql:8.0
     container_name: db
     restart: unless-stopped
+    command: bash -c "
+      mysql -u root -c -e "CREATE USER 'laravel'@'172.21.0.%' IDENTIFIED BY '';"
+      mysql -u root -c -e "GRANT ALL PRIVILEGES ON *.* TO 'laravel'@'172.21.0.%' IDENTIFIED BY '';"
+      mysql -u root -c -e "FLUSH PRIVILEGES;" "
     volumes:
       - dbdata:/var/lib/mysql/
       - dbcnf:/etc/mysql/mysqld/my.cnf
