@@ -11,7 +11,7 @@ WORKDIR /var/www/html/
 
 COPY ./laravel-realworld-example-app /var/www/html/laravel-realworld-example-app
 
-COPY ./env.example /var/www/html/laravel-realworld-example-app/.env
+COPY ./.env.example /var/www/html/laravel-realworld-example-app/.env
 
 RUN apt install apt-transport-https gnupg2 ca-certificates -y
 
