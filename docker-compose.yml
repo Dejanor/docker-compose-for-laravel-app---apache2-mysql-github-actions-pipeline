@@ -44,3 +44,4 @@ networks:
       config:
       - subnet: 172.21.0.0/24
         gateway: 172.21.0.1
+        ip_range: 172.21.0.255
