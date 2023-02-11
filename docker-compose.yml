@@ -23,7 +23,7 @@ services:
     restart: unless-stopped
     volumes:
       - dbdata:/var/lib/mysql/
-      - dbcnf:/etc/my.cnf
+      - dbcnf:/etc/mysql/mysqld/my.cnf
     networks:
       - laravel-network
 
