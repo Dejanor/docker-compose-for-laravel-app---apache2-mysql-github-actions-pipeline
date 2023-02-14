@@ -37,9 +37,9 @@ In .env.example file
 Specify DB_PASSWORD
 You can also specify other environment variables
 ```
-Rename .env.example file to .env
+Copy .env.example to .env
 ```
-Rename '.env.example' ---> '.env'
+run: cp .env.example .env
 ```
 In docker-compose.yml
 ```
