@@ -50,8 +50,8 @@ Build image and deploy containers for services
 ```
 docker compose up -d
 ```
-Create table in database
-wait 30 seconds to a minute after running 'docker compose up -d,' then run:
+Create table in database.
+Wait 30 seconds to a minute after running 'docker compose up -d,' then run:
 ```
 docker compose exec laravel php artisan migrate --seed
 ```
