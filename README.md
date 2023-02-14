@@ -55,3 +55,12 @@ Wait 30 seconds to a minute after running 'docker compose up -d,' then run:
 ```
 docker compose exec laravel php artisan migrate --seed
 ```
+Illustration:
+![illustration](./illustration.png)
+## Result
+Landing Page:
+![landing page](./result-landing-page.png)
+
+
+Endpoints:
+![endpoint](./result-endpoints.png)
