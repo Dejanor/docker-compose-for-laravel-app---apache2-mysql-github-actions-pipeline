@@ -1,10 +1,10 @@
 # docker-laravel-app
-Dockerfile to build laravel app and docker compose file to define, create and manage services. 
+Dockerfile to build laravel app and docker-compose file to define, create and manage services. 
 
 ### Dockerfile
 - Built on ubuntu image.
 - Installs apache2 and other dependencies.
-- Copies source file for laravel app onto image.
+- Copies source files for laravel app onto image.
 - Installs laravel.
 - Sets up apache2.
 - Starts apache2.
@@ -30,7 +30,27 @@ Dockerfile to build laravel app and docker compose file to define, create and ma
 ### web.php
 - Enable laravel landing page.
 
-### Instructions
-- specify db user password in ./docker-compose.yml
-- Also DB_PASSWORD in .env.example
-- run docker compose up -d #to create containers
+## Install
+### Setup
+In .env.example file
+```
+Specify DB_PASSWORD
+You can also specify other environment variables
+```
+Rename .env.example file to .env
+```
+Rename '.env.example' ---> '.env'
+```
+In docker-compose.yml
+```
+Variables 'DB_PASSWORD' and 'DB_DATABASE' will be picked up from .env file
+```
+### Deploy
+Build image and deploy containers for services
+```
+docker compose up -d
+```
+Create table in database
+```
+docker compose exec laravel php artisan migrate --seed
+```
