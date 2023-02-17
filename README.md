@@ -1,5 +1,5 @@
 # docker-laravel-app
-Dockerfile to build laravel app and docker-compose file to define, create and manage services.
+Dockerfile to build laravel app and docker-compose file to define, create and manage services. <br>
 link to the laravel app repo: https://github.com/f1amy/laravel-realworld-example-app
 
 ### Dockerfile
@@ -51,7 +51,7 @@ Build image and deploy containers for services
 ```
 docker compose up -d
 ```
-Create table in database.
+Create table in database.<br>
 Wait 30 seconds to a minute after running 'docker compose up -d,' then run:
 ```
 docker compose exec laravel php artisan migrate --seed
