@@ -1,5 +1,6 @@
 # docker-laravel-app
-Dockerfile to build laravel app and docker-compose file to define, create and manage services. 
+Dockerfile to build laravel app and docker-compose file to define, create and manage services.
+link to the laravel app repo: https://github.com/f1amy/laravel-realworld-example-app
 
 ### Dockerfile
 - Built on ubuntu image.
