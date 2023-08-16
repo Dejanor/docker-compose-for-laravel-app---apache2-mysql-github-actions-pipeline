@@ -65,8 +65,8 @@ jobs:
           docker compose up -d --pull always && sleep 35 && 
           docker compose exec laravel php artisan migrate --seed --env=development && 
           docker compose exec laravel php artisan test --env=development
-          chown -R www-data:www-data /var/lib/docker/volumes/'$server_user'_laravel-src  \ 
-          && chmod -R 775 /var/lib/docker/volumes/'$server_user'_laravel-src
+          chown -R www-data:www-data /var/lib/docker/volumes/$server_user_laravel-src  \ 
+          && chmod -R 775 /var/lib/docker/volumes/$server_user_laravel-src
           "
 
   deploy:
@@ -89,7 +89,7 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i prod.pem $server_user@$prod_server_ip "
           docker ps -aq | xargs docker stop || true | xargs docker rm || true &&
           docker compose up -d --pull always
-          chown -R www-data:www-data /var/lib/docker/volumes/'$server_user'_laravel-src  \ 
-          && chmod -R 775 /var/lib/docker/volumes/'$server_user'_laravel-src
+          chown -R www-data:www-data /var/lib/docker/volumes/$server_user_laravel-src  \ 
+          && chmod -R 775 /var/lib/docker/volumes/$server_user_laravel-src
           "
           
