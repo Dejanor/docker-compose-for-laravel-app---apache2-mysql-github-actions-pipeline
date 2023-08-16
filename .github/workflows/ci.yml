@@ -29,7 +29,6 @@ jobs:
     
     - name: Set up Image build
       run: |
-        cd laravel-app/
         echo '${{ secrets.ENV_FILE }}' > .env.example
         cat .env.example
 
