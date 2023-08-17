@@ -22,8 +22,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Request Approval
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const response = await github.pulls.createReview({
               ...context.repo,
