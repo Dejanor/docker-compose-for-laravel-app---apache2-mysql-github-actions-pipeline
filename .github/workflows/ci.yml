@@ -14,9 +14,9 @@ env:
   DB_DATABASE: ${{ secrets.DB_DATABASE }}
   DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
   server_user: 'root'
-  dev_server_ip: '157.230.127.122'
-  staging_server_ip: '138.68.81.66'
-  prod_server_ip: '209.38.201.50'
+  dev_server_ip: '134.122.75.184'
+  staging_server_ip: '209.38.198.82'
+  prod_server_ip: '164.90.217.83'
 
 jobs:
   build:
